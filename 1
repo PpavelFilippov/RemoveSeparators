@@ -1,0 +1,25 @@
+#include <stdio.h>
+void RemoveSeparators(char str[]);
+int main() {
+        char str[100];
+        FILE* file = fopen("sentence", "w");
+        fprintf(file, "sdfg asdfg sdf");
+        fclose(file);
+        FILE* life = fopen("sentence", "r");
+        fgets(str,100,file);
+        printf("%s\n", str);
+        RemoveSeparators(str);;
+        fclose(file);
+
+        return 0;
+}
+void RemoveSeparators(char str[])
+{
+    int l;
+    for(l = 0; str[l]; ++l)
+    {
+        if(str[l]!= ' ')
+            printf("%c", str[l]);
+    }
+
+}

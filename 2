@@ -1,0 +1,15 @@
+#include <stdio.h>
+void RemoveSeparators(char str[]);
+int main() {
+     char str[100];
+     fgets(str, sizeof str , stdin);
+           RemoveSeparators(str);
+        return 0;
+}
+void RemoveSeparators(char str[]) {
+    int l;
+    for (l = 0; str[l]; ++l) {
+        if (str[l] != ' ')
+            printf("%c", str[l]);
+    }
+}

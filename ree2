@@ -1,0 +1,54 @@
+#include <stdio.h>
+#define N 100
+#pragma warning(disable:4013)
+
+void removespaces(char stri[])
+{
+    int i = 0;
+    int j = 0;
+    char buffer[N];
+    while (stri[i] != '\0')
+    {
+        if ((stri[i] != ' ') && (stri[i] != ',') && (stri[i] != '.') && (stri[i] != ';') && (stri[i] != ':') &&
+            (stri[i] != '?') && (stri[i] != '`') && (stri[i] != '(') && (stri[i] != ')') && (stri[i] != '{') &&
+            (stri[i] != '}') && (stri[i] != '[') && (stri[i] != ']') && (stri[i] != '<') && (stri[i] != '>') &&
+            (stri[i] != '!') && (stri[i] != '|') && (stri[i] != '/') && (stri[i] != '~') && (stri[i] != '_') &&
+            (stri[i] != '#') && (stri[i] != '%') && (stri[i] != '&') && (stri[i] != '^') && (stri[i] != '-') &&
+            (stri[i] != '=') && (stri[i] != '+') && (stri[i] != '*') && (stri[i] != '@') && (stri[i] != '$'))
+        {
+            buffer[j] = stri[i];
+            j++;
+        }
+        i++;
+    }
+    i = 0;
+    while (stri[i] != '\0')
+    {
+        stri[i] = ' ';
+        i++;
+    }
+    i = 0;
+    while (buffer[i] != '\0')
+    {
+        stri[i] = buffer[i];
+        i++;
+
+    }
+}
+
+int main() {
+    char stri[100];
+    gets(stri);
+    int i = 0;
+    removespaces(stri);
+    while ((stri[i] != ' ') && (stri[i] != ',') && (stri[i] != '.') && (stri[i] != ';') && (stri[i] != ':') &&
+           (stri[i] != '?') && (stri[i] != '`') && (stri[i] != '(') && (stri[i] != ')') && (stri[i] != '{') &&
+           (stri[i] != '}') && (stri[i] != '[') && (stri[i] != ']') && (stri[i] != '<') && (stri[i] != '>') &&
+           (stri[i] != '!') && (stri[i] != '|') && (stri[i] != '/') && (stri[i] != '~') && (stri[i] != '_') &&
+           (stri[i] != '#') && (stri[i] != '%') && (stri[i] != '&') && (stri[i] != '^') && (stri[i] != '-') &&
+           (stri[i] != '=') && (stri[i] != '+') && (stri[i] != '*') && (stri[i] != '@') && (stri[i] != '$'))
+    {
+        printf("%c", stri[i]);
+        i++;
+    }
+}
